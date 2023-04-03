@@ -7,7 +7,6 @@ class CalculateBill {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int billCount = 1;
-
         Bill bill1 = new Bill();
         Bill[][] bill = new Bill[100][100];
 

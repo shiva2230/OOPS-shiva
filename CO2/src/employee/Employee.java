@@ -17,13 +17,6 @@ class EmployeeFunction {
         this.salary = salary;
     }
 
-//    void addData(int eNo, String eName, float salary){
-//        this.eNo=eNo;
-//        this.eName=eName;
-//        this.salary=salary;
-//    }
-
-
     public EmployeeFunction() {
     }
 
