@@ -38,7 +38,7 @@ class Literature extends Book{
         author="Harper Lee";
         genre="Literature";
         price=500;
-        String publisher=book.getPublisher;
+        //String publisher=book.getPublisher;
  }
     void  display(){
         System.out.println("Book name = "+bookName);
