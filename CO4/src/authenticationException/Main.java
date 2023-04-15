@@ -3,18 +3,18 @@ package authenticationException;
 import java.util.Scanner;
 
 class InvalidCredException extends Exception {
-    public InvalidCredException() {
-        super();
+    public InvalidCredException(String msg) {
+        super(msg);
     }
 }
 class Credentials{
     void validate(String username,String password){
         if(!username.equals("admin")||!password.equals("admin")){
             try {
-                throw new InvalidCredException();
+                throw new InvalidCredException("Invalid Credentials");
             }
             catch (Exception e){
-                System.out.println("Invalid Credentials");
+                System.out.println("InvalidCredException: "+e.getMessage());
             }
         }
         else {

@@ -3,8 +3,8 @@ package averageException;
 import java.util.Scanner;
 
 class NegativeValueException extends Exception{
-    public NegativeValueException(){
-        super();
+    public NegativeValueException(String msg){
+        super(msg);
     }
 }
 class Function{
@@ -19,10 +19,10 @@ class Function{
             float num=sc.nextInt();
             if (num<0){
                 try {
-                    throw new NegativeValueException();
+                    throw new NegativeValueException("Only postive values allowed...Try Again !!");
                 }
                 catch (NegativeValueException e){
-                    System.out.println("Only postive values allowed...Try Again !!");
+                    System.out.println("NegativeValueException: "+ e.getMessage());
                     i--;
                 }
             }
