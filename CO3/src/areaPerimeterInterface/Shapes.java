@@ -59,8 +59,8 @@ class ShapesMain{
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         int choice;
-        Circle circle=new Circle();
-        Rectangle rectangle=new Rectangle();
+        Shapes circle=new Circle();
+        Shapes rectangle=new Rectangle();
         do {
 
         System.out.println("Enter your choice: ");
