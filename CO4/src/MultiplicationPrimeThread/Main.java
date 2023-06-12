@@ -15,14 +15,14 @@ class Prime extends Thread{
     Scanner sc=new Scanner(System.in);
     int n;
 
-    Prime(int n){
-    this.n=n;
-    }
+//    Prime(int n){
+//    this.n=n;
+//    }
 
     @Override
     public void run() {
-        System.out.println("Enter the limit: ");
-        n=sc.nextInt();
+
+        n=10;
         int count = 0;
         int number = 2;
 
@@ -45,10 +45,10 @@ class Prime extends Thread{
 
 public class Main {
     public static void main(String[] args){
+        Prime prime=new Prime();
+        prime.start();
         Multiplication multiplication=new Multiplication();
         multiplication.start();
-
-
     }
 
 }
