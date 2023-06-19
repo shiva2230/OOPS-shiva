@@ -1,4 +1,4 @@
-package LinkedList.java;
+package LinkedListRemoveAllElements;
 
 import java.util.Iterator;
 import java.util.LinkedList;
