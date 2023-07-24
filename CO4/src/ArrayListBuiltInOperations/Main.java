@@ -1,45 +1,67 @@
 package ArrayListBuiltInOperations;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<String> list1=new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
-        list1.add("Shiva");
-        list1.add("Fayaz");
-        list1.add("Amjad");
-        list1.add("Nidal");
+        ArrayList<String> list1 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
 
-        System.out.println(list1);
+        System.out.println("Enter names for list1 (Type 'done' to stop): ");
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("done")) {
+                break;
+            }
+            list1.add(input);
+        }
 
-        ArrayList<String> list2=new ArrayList<>();
+        System.out.println("List1: " + list1);
 
-        list2.add("Raiz");
-        list2.add("Alan");
-        list2.add("PP");
-        list2.add("Alan");
+        System.out.println("Enter names for list2 (Type 'done' to stop): ");
+        while (true) {
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("done")) {
+                break;
+            }
+            list2.add(input);
+        }
 
-        System.out.println(list2);
+        System.out.println("List2: " + list2);
+
 
         list1.addAll(list2);
 
-        System.out.println(list1);
 
-        System.out.println("\nAdding elements at specific index : ");
-        list1.add(3,"Jithin");
-
-        System.out.println(list1);
-
-        System.out.println("\nRemoving elements from a specific index");
-        list1.remove(4);
-
-        Boolean isEmpty=list1.isEmpty();
-        System.out.println("Is the list empty : "+isEmpty);
+        System.out.println("Combined List: " + list1);
 
 
+        System.out.println("\nEnter the name to add at a specific index: ");
+        String nameToAdd = scanner.nextLine();
+        System.out.println("Enter the index where you want to add the name: ");
+        int indexToAdd = scanner.nextInt();
+        list1.add(indexToAdd, nameToAdd);
 
+
+        System.out.println("Updated List: " + list1);
+
+
+        System.out.println("\nEnter the index to remove an element: ");
+        int indexToRemove = scanner.nextInt();
+        list1.remove(indexToRemove);
+
+
+        System.out.println("Final List: " + list1);
+
+        Boolean isEmpty = list1.isEmpty();
+        System.out.println("Is the list empty: " + isEmpty);
+
+        scanner.close();
     }
 }

@@ -1,20 +1,37 @@
 package CompareHashSet;
 
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        HashSet<String> hashSet=new HashSet<>();
-        HashSet<String> hashSet1=new HashSet<>();
-        hashSet1.add("Apple");
-        hashSet1.add("Orange");
-        hashSet1.add("Grapes");
-        hashSet1.add("Apple");
-        hashSet.add("Apple");
-        hashSet.add("Orange");
-        hashSet.add("Grapes");
-        hashSet.add("Apple");
-        Boolean isEqual= hashSet.equals(hashSet1);
-        System.out.println("Is the two hashsets similar: "+isEqual);
+        Scanner scanner = new Scanner(System.in);
+
+        HashSet<String> hashSet1 = new HashSet<>();
+        HashSet<String> hashSet2 = new HashSet<>();
+
+        System.out.println("Enter elements for HashSet 1 (Type 'done' to stop): ");
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("done")) {
+                break;
+            }
+            hashSet1.add(input);
+        }
+
+        System.out.println("Enter elements for HashSet 2 (Type 'done' to stop): ");
+        while (true) {
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("done")) {
+                break;
+            }
+            hashSet2.add(input);
+        }
+
+        Boolean isEqual = hashSet1.equals(hashSet2);
+        System.out.println("Are the two hashsets similar: " + isEqual);
+
+        scanner.close();
     }
 }

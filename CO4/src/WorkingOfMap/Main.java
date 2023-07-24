@@ -2,28 +2,60 @@ package WorkingOfMap;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Map<Integer,String> map=new HashMap<>();
-        System.out.println("Adding elements");
-        map.put(1,"Shiva");
-        map.put(2,"Nidal");
-        map.put(3,"Amjad");
-        map.put(4,"Fayaz");
-        map.put(5,"Shiva");
-        for (Map.Entry m: map.entrySet()){
-            System.out.println(m.getKey()+" "+m.getValue());
+        Scanner scanner = new Scanner(System.in);
+        Map<Integer, String> map = new HashMap<>();
+
+        System.out.println("Adding elements to the map (Type '-1' for key to stop): ");
+        int key;
+        String value;
+        while (true) {
+            System.out.print("Enter key: ");
+            key = scanner.nextInt();
+            if (key == -1) {
+                break;
+            }
+            System.out.print("Enter value: ");
+            value = scanner.next();
+            map.put(key, value);
         }
-        System.out.println(" After Changing : ");
-        map.replace(5,"PP");
-        for (Map.Entry m: map.entrySet()){
-            System.out.println(m.getKey()+" "+m.getValue());
+
+        System.out.println("Elements in the map: ");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
-        System.out.println("After removing : ");
-        map.remove(5);
-        for (Map.Entry m: map.entrySet()){
-            System.out.println(m.getKey()+" "+m.getValue());
+
+        System.out.println("Enter key to change the value: ");
+        int keyToChange = scanner.nextInt();
+        if (map.containsKey(keyToChange)) {
+            System.out.println("Enter new value: ");
+            String newValue = scanner.next();
+            map.replace(keyToChange, newValue);
+        } else {
+            System.out.println("Key not found in the map.");
         }
+
+        System.out.println("Elements in the map after changing: ");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        System.out.println("Enter key to remove entry: ");
+        int keyToRemove = scanner.nextInt();
+        if (map.containsKey(keyToRemove)) {
+            map.remove(keyToRemove);
+        } else {
+            System.out.println("Key not found in the map.");
+        }
+
+        System.out.println("Elements in the map after removing: ");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        scanner.close();
     }
 }
