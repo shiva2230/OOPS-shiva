@@ -19,5 +19,7 @@ public class Main extends Applet {
         g.setColor(Color.BLUE);
         g.drawLine(50, 200, 350, 200);
     }
+
+
 }
 

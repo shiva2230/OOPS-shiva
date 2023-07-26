@@ -10,8 +10,9 @@ public class Main extends Frame implements ActionListener{
     Label label1,label2,label3,label4;
     Button button;
     Main(){
+
         setVisible(true);
-        setSize(300,300);
+        setSize(300,500);
         setLayout(null);
         setTitle("Sample Button");
 
@@ -40,7 +41,7 @@ public class Main extends Frame implements ActionListener{
         text3.setBounds(20,210,150,30);
         add(text3);
 
-        label4=new Label("Number 4 :");
+        label4=new Label("Greatest number :");
         label4.setBounds(20,310,150,30);
         add(label4);
 

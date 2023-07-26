@@ -13,7 +13,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int choice;
         do {
-
             System.out.println("Enter your choice : ");
             System.out.println("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n0.Exit");
             choice = sc.nextInt();
